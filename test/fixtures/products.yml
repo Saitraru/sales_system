@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Xaiomi:
+  title: Celular Xaiomi
+  description: Celular en caja nuevo del año 2019
+  price: 95
+
+Switch:
+  title: Nintendo switch
+  description: Consola con poco uso y mucha memoria
+  price: 305
