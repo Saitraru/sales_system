@@ -6,7 +6,47 @@ class
         get products_path
 
         assert_response :success
-        assert_select '.product', 2
+        assert_select '.product', 3
+        assert_select '.category', 4
+    end
+
+    test 'render a list of products filtered by category' do
+        get products_path(category_id: categories(:computers).id)
+
+        assert_response :success
+        assert_select '.product', 1
+    end
+
+    test 'render a list of products filtered by mi_price and max_price' do
+        get products_path(min_price: 300, max_price: 310)
+
+        assert_response :success
+        assert_select '.product', 1
+        assert_select 'h2', 'Nintendo switch'
+    end
+
+    test 'search a product by query_text' do
+        get products_path(query_text: 'Switch')
+
+        assert_response :success
+        assert_select '.product', 1
+        assert_select 'h2', 'Nintendo switch'
+    end
+
+    test 'sort products by expensive prices first' do
+        get products_path(order_by: 'expensive')
+
+        assert_response :success
+        assert_select '.product', 3
+        assert_select '.products .product:first-child h2', 'Nintendo switch'
+    end
+
+    test 'sort products by cheapest prices first' do
+        get products_path(order_by: 'cheapest')
+
+        assert_response :success
+        assert_select '.product', 3
+        assert_select '.products .product:first-child h2', 'Celular Xaiomi'
     end
 
     test 'render detailed product page' do
@@ -30,7 +70,8 @@ class
             product:{
                 title: 'Nintendo 64',
                 description: 'Le faltan los cables',
-                price: 55
+                price: 55,
+                category_id: categories(:videogames).id
             }
         }
 

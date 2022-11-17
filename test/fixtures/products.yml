@@ -4,8 +4,16 @@ Xaiomi:
   title: Celular Xaiomi
   description: Celular en caja nuevo del año 2019
   price: 95
+  category: tecnology
 
 Switch:
   title: Nintendo switch
   description: Consola con poco uso y mucha memoria
   price: 305
+  category: videogames
+
+Air:
+  title: Macbook air
+  description: Le falla la batería
+  price: 250
+  category: computers

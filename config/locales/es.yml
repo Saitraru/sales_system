@@ -20,6 +20,7 @@ es:
               blank: 'no puede estar vacío'
   common:
     confirm: '¿Estás seguro?'
+    back: 'Volver'
   products:
     edit:
       title: 'Editar Producto'
@@ -27,9 +28,33 @@ es:
       title: 'Añadir Producto'
     index:
       title: 'Productos'
+      all: 'Todos'
+      min_price: 'Precio mínimo'
+      max_price: 'Precio máximo'
+      query_text: '¿Qué quieres buscar?'
+      expensive: 'Más caro'
+      cheapest: 'Más barato'
+      newest: 'Más reciente'
     create:
       created: 'Tu producto se creó correctamente'
     update:
       updated: 'Tu producto se actualizó correctamente'
     destroy:
       destroyed: 'Tu producto se eliminó correctamente'
+  categories:
+    category:
+      edit: 'Editar'
+      delete: 'Borrar'
+    index:
+      title: 'Categorías'
+      new: 'Añadir categoría'
+    edit:
+      title: 'Editar categoría'
+    create:
+      created: 'Tu categoría se ha creado correctamente'
+    update:
+      updated: 'Tu categoría se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu categoría se ha eliminado correctamente'
+    new:
+      title: 'Añadir categoría'
